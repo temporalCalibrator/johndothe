@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+		<!--
+			Hello curious code explorer. Some credits:
+			Most of the code was shamelessly stolen from the exquisite everydayim.com.
+			The beautiful music you hear is from the unofficial Homestuck album Land of Fans and Music 3, track 31, aptly entitled JOHN DO THE WINDY THING.
+			LOFAM is cool. You should check it out.
+			The default font is a permanently pixelated version of Courier New Bold.
+			
+			And for me:
+			I go by temporalCalibrator in the fandom, but you can contact me at tcal@migroseti.org.
+			
+			And follow me on Tumblr! temporalCalibrator.tumblr.com.
+		-->
+	<head>
+		<title>JOHN DO THE</title>
+		<script type="text/javascript">
+		  window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+		  window.analytics.load("r32dtym3ax");
+		  window.analytics.page();
+		</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
+		<script src="http://bitstorm.org/jquery/color-animation/jquery.animate-colors.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.js" type="text/javascript"></script>
+		<script type="text/javascript">			
+			$(document).ready(function(){
+				blink();
+			})
+					
+			function blink(){
+			$(".container")
+				.animate({backgroundColor: '#0715CD'}, 150)
+				.animate({backgroundColor: '#00D5F2'}, 150)
+				.animate({backgroundColor: '#005682'}, 150)
+				.animate({backgroundColor: '#0087EB'}, 150)
+				.animate({backgroundColor: '#B5FFFE'}, 150)
+				.animate({backgroundColor: '#4379E6'}, 150)
+				.animate({backgroundColor: '#0070ED'}, 150)
+				.animate({backgroundColor: '#0052F3'}, 150)
+				.animate({backgroundColor: '#0046D1'}, 150, function(){blink()});
+			}
+
+			function showWhite(){
+				var audio = $(".windy")[0];
+				$(".white").fadeIn("fast");
+				audio.pause();
+			}
+			
+			function hideWhite(){
+				var audio = $(".windy")[0];
+				audio.addEventListener('ended', function(){this.currentTime = 0;}, false);
+				$(".white").fadeOut("fast");
+				audio.play();
+			}
+		</script>
+		
+		
+		
+		
+		<style type="text/css">
+		@font-face {
+	        font-family: "FONTSTUCK";
+	        src: url('FONTSTUCK.eot');
+	        src: url('FONTSTUCK.eot?#iefix') format('embedded-opentype'),
+	        url('FONTSTUCK.svg#FONTSTUCK') format('svg'),
+	        url('FONTSTUCK.woff') format('woff'),
+	        url('FONTSTUCK.ttf') format('truetype');
+	        font-weight: normal;
+	        font-style: normal;
+	    }
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: 'Courier New';
+				font-weight: bold;
+				color: #fff;
+				overflow: hidden;
+			}
+			
+			.container{
+				position: fixed; 
+				width: 100%; 
+				height: 100%;
+				top: 0px;
+				left: 0px;
+				background-color: white;
+				display: block;
+				z-index: 100;
+			}	
+			
+			.white{
+				position: fixed; 
+				width: 100%; 
+				height: 100%; 
+				top: 0px; 
+				left: 0px; 
+				background-color: white; 
+				display: block;
+				z-index: 101;
+			}
+					
+			.type{
+				position: fixed; 
+				width: 550px;
+				left: 50%;
+				top: 35%;
+				margin-left: -275px;
+				text-align: center;
+				color: black;
+				font-family: 'FONTSTUCK', 'Courier New', 'Helvetica', sans-serif;
+				font-weight: bold;
+				font-size: 100px;
+				line-height: 120px;
+				z-index: 1000000000000;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="container"></div>
+		<div class="white"></div>
+		<a class="type" onmouseover="hideWhite();" onmouseout="showWhite();">WINDY</br> THING</a>
+		<audio class="windy" preload loop> 
+ 			<source src="windy.mp3">
+  			<source src="windy.wav">
+		</audio>
+	</body>
+</html>
